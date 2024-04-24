@@ -17,45 +17,24 @@ class Login extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'The High Table',
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orangeAccent,
-                  ),
-                ),
-                Image.asset(
-                  'assets/altamesalogo1.png', 
-                  height: 300, 
-                  width: 250, 
-                ),
+                Text('The High Table', style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.orangeAccent)),
+                Image.asset('assets/altamesalogo1.png', height: 300, width: 250),
                 SizedBox(height: 20), 
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AssassinsPage()),
+                      context,MaterialPageRoute(builder: (context) => AssassinsPage()),
                     );
-      
+
                   },
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.orangeAccent), 
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
+                        borderRadius: BorderRadius.circular(8))),
                     padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                      EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-                    ),
-                  ),
-                  child: Text(
-                    'Iniciar Sesión',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.black, 
-                    ),
+                      EdgeInsets.symmetric(horizontal: 40, vertical: 16))),
+                  child: Text('Iniciar Sesión',style: TextStyle(fontSize: 20, color: Colors.black),
                   ),
                 ),
               ],
@@ -70,15 +49,12 @@ class Login extends StatelessWidget {
               onTap: () {
                 launchUrl(Uri.parse('https://github.com/MathiasSolar/The-high-Table'));
               },
-
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(MdiIcons.github, color: Colors.orangeAccent, size: 38,),
                   SizedBox(width: 8),
-                  
-                  Text('© 2024 Mathias Solar', style: TextStyle(color: Colors.orangeAccent),),
-                
+                  Text('© 2024 Mathias Solar', style: TextStyle(color: Colors.orangeAccent)),
                 ],
               ),
             ),
