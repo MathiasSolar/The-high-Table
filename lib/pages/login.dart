@@ -1,8 +1,8 @@
 import 'package:alta_mesa/pages/assasins.dart';
+import 'package:alta_mesa/pages/history.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:url_launcher/url_launcher.dart'; 
-
+import 'package:url_launcher/url_launcher.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key});
@@ -23,18 +23,34 @@ class Login extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                      context,MaterialPageRoute(builder: (context) => AssassinsPage()),
-                    );
-
+                      context,
+                      MaterialPageRoute(builder: (context) => AssassinsPage()));
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.orangeAccent), 
+                    backgroundColor: MaterialStateProperty.all<Color>(Colors.orangeAccent),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8))),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
                     padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                      EdgeInsets.symmetric(horizontal: 40, vertical: 16))),
-                  child: Text('Iniciar Sesión',style: TextStyle(fontSize: 20, color: Colors.black),
+                      EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                    ),
+                  ),
+                  child: Text(
+                    'Iniciar Sesión',
+                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  ),
+                ),
+                SizedBox(height: 20), 
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HistoryPage()),
+                  );
+                  },
+                  child: Text(
+                    '¿Quieres saber más de nosotros?',
+                    style: TextStyle(color: Colors.orangeAccent, fontSize: 16, decoration: TextDecoration.underline),
                   ),
                 ),
               ],
@@ -64,4 +80,3 @@ class Login extends StatelessWidget {
     );
   }
 }
-
